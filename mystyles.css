@@ -1,0 +1,10 @@
+div#show_time_div input{
+  display: none;
+}
+
+div#show_time_div.clicked input{
+	display: inline;
+  background: red;
+  -webkit-transition:  2s; /* For Safari 3.1 to 6.0 */
+  transition: width 2s;
+}

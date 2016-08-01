@@ -1,14 +1,18 @@
 window.onload = function(){
-    document.getElementById("show_time_div").style.visibility = "hidden";
     document.getElementById("time_input_box").addEventListener("click", time_input_box);
-    chrome.tabs.getSelected(null, function(tab) {
-		  if tab.url
+    document.getElementById("pick-time").addEventListener("click", select_time_from_video);
 
-	});
+    chrome.tabs.getSelected(null, function(tab) {
+		});
 }
 
 function time_input_box(){
-	document.getElementById("show_time_div").style.visibility = "visible";
+	console.log("jhb");
+	$("#show_time_div").toggleClass("clicked");
+}
+
+function select_time_from_video(){
+	alert("hi");
 }
 
 

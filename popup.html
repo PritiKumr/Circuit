@@ -5,6 +5,8 @@
   	 <script src='./jquery-ui.min.js'></script>
   	 <link rel="stylesheet" type="text/css" href="./jquery-ui.css">
   	 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  	 <link rel="stylesheet" href="./mystyles.css">
+
  		 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
      <title>Circuit - Youtube looper</title>
@@ -12,16 +14,16 @@
     <!-- JavaScript and HTML must be in separate files for security. -->
      <script src="popup.js"></script>
   </head>
-<body style="width: 100px; background-color: yellow;">
+<body style="width: 200px; background-color: #ebebeb;">
 	<div class="main">
-		<div id="pick-time" style="cursor:pointer;"> 
-			<span class="glyphicon glyphicon-pencil" style="color: blue; "></span>Pick time
+		<div id="pick-time" style="cursor:pointer; text-align: left; margin-top: 10px;"> 
+			<span class="glyphicon glyphicon-hand-up" style="color: blue; "></span> Select time from screen
 		</div>
 		<br>
-		<div id="time_input_box" style="cursor:pointer; text-align: center;"> <span> </span> Enter time </div>
-		<div id="show_time_div">
-			<input type="text" id="start_time" placeholder="Start Time" style="width: 100%;"></input>
-			<input type="text" id="end_time" placeholder="End Time" style="width: 100%;"></input>
+		<div id="time_input_box" style="cursor:pointer; text-align: left;"> <span class="glyphicon glyphicon-time" style="color: blue; "> </span> Enter time </div>
+		<div id="show_time_div" style="text-align: center; margin-top: 10px; margin-bottom: 5px;">
+			<input type="text" id="start_time" placeholder="Start Time"></input>
+			<input type="text" id="end_time" placeholder="End Time"></input>
 		</div>
 	</div>
 </body>
