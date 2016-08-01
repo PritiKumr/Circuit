@@ -11,8 +11,10 @@
    "default_title": "Video Looper"
   },
   "permissions": [
-   "activeTab"
+   "activeTab",
+   "tabs",
+   "http://www.youtube.com/*"
    ],
   "content_scripts": [
-  
+  ] 
 }
