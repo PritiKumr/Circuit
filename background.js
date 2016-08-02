@@ -1,6 +1,13 @@
 console.log("Background script running");
-chrome.tabs.getSelected(null,function(tab) {
-	chrome.tabs.sendMessage(tab.id, {greeting: "hello"}, function(response) {
-	    console.log(response);
-	  });
+
+function findMusicPlayer(player){
+	ytplayer = player.getElementById("movie_player");
+	alert(ytplayer);
+}
+
+chrome.tabs.query({active: true}, function(tabs){
+	chrome.tabs.executeScript(null, {file: "content.js"});
+	chrome.tabs.sendMessage(tabs[0].id, {method: 'getDOM'}, function(response){
+		findMusicPlayer(response);
+	});
 });
