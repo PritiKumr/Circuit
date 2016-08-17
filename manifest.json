@@ -19,5 +19,7 @@
    "tabs",
    "http://youtube.com/*",
    "http://*/*", "https://*/*"
-   ]
+   ],
+  "content_security_policy": 
+    "script-src 'self' https://www.youtube.com/player_api https://s.ytimg.com/yt/jsbin/www-widgetapi-vfl9Ni0ki.js; object-src 'self'"
 }
