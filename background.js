@@ -1,7 +1,7 @@
 console.log("Background script running");
 
 function findMusicPlayer(player){
-	console.log("hellp" ,player);
+	alert("hello" ,player);
 }
 
 chrome.tabs.query({active: true}, function(tabs){
@@ -9,7 +9,10 @@ chrome.tabs.query({active: true}, function(tabs){
 	chrome.tabs.executeScript({
     file: 'inject.js'
   });
-	chrome.tabs.sendMessage(tabs[0].id, {method: 'getDOM'}, function(response){
-		findMusicPlayer(response);
-	});
+
+  // setInterval(function(){
+		chrome.tabs.sendMessage(tabs[0].id, {method: 'getDOM'}, function(response){
+			findMusicPlayer(response);
+		});
+	// }, 5000);
 });
