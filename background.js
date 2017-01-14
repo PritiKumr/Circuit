@@ -1,7 +1,7 @@
 console.log("Background script running");
 
 function findMusicPlayer(player){
-	console.log(player);
+	console.log("hellp" ,player);
 }
 
 chrome.tabs.query({active: true}, function(tabs){
@@ -13,4 +13,3 @@ chrome.tabs.query({active: true}, function(tabs){
 		findMusicPlayer(response);
 	});
 });
-
