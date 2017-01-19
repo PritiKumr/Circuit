@@ -1,18 +1,22 @@
 console.log("Background script running");
 
-function findMusicPlayer(player){
-	alert("hello" ,player);
-}
 
 chrome.tabs.query({active: true}, function(tabs){
 	chrome.tabs.executeScript(null, {file: "content.js"});
 	chrome.tabs.executeScript({
     file: 'inject.js'
   });
+});
 
-  // setInterval(function(){
-		chrome.tabs.sendMessage(tabs[0].id, {method: 'getDOM'}, function(response){
-			findMusicPlayer(response);
-		});
-	// }, 5000);
+
+
+chrome.runtime.onConnect.addListener(function(port) {
+	var end_time = 62.889197
+  console.assert(port.name == "circuit");
+  port.onMessage.addListener(function(msg) {
+  	console.log(msg.time);
+    if(msg.time >= end_time){
+    	port.postMessage({response: 'loop'});
+    }
+  });
 });
