@@ -3,7 +3,7 @@ console.log("Content Script");
 var port = chrome.runtime.connect({name: "circuit"});
 window.setInterval(function(){
 	port.postMessage({time: getTimeCode(), type: "timeCode"});
-}, 500)
+}, 250)
 port.onMessage.addListener(function(msg) {
   if (msg.response == "loop"){
     seekVideo();
@@ -20,3 +20,12 @@ function seekVideo(){
 function getTimeCode(){
 	return document.getElementsByTagName('video')[0].currentTime;
 }
+
+function captureTimeCodes(){
+
+}
+
+
+document.getElementsByClassName("ytp-progress-bar-container")[0].addEventListener("click", function(){
+	
+})
