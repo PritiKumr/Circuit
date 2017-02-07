@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+
+  "name": "Circuit - Youtube Looper",
+  "description": "This extension help you to loop youtube videos from selected time.",
+  "version": "1.0",
+
+  "browser_action": {
+   "default_icon": "ask.png",
+   "default_popup": "popup.html",
+   "default_title": "Video Looper"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "permissions": [
+   "activeTab",
+   "tabs",
+   "http://youtube.com/*",
+   "http://*/*", "https://*/*"
+   ],
+  "content_security_policy": 
+    "script-src 'self' https://www.youtube.com/player_api https://s.ytimg.com/yt/jsbin/www-widgetapi-vfl9Ni0ki.js; object-src 'self'"
+}
