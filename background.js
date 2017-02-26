@@ -7,6 +7,7 @@ chrome.tabs.query({active: true}, function(tabs){
     file: 'inject.js'
   });
 });
+<<<<<<< HEAD
 
 
 
@@ -20,3 +21,5 @@ chrome.runtime.onConnect.addListener(function(port) {
     }
   });
 });
+=======
+>>>>>>> 9852e2e8f0d1d24a901ea6b254b7bba960463707
