@@ -1,5 +1,5 @@
 div#show_time_div input{
-  display: none;
+  /*display: none;*/
 }
 
 div#show_time_div.clicked input{

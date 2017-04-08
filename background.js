@@ -7,19 +7,45 @@ chrome.tabs.query({active: true}, function(tabs){
     file: 'inject.js'
   });
 });
-<<<<<<< HEAD
-
 
 
 chrome.runtime.onConnect.addListener(function(port) {
-	var end_time = 62.889197
+	var timeCodes = [];
+  var currentTimecodeIndex = 0;
+
   console.assert(port.name == "circuit");
   port.onMessage.addListener(function(msg) {
-  	console.log(msg.time);
-    if(msg.time >= end_time){
-    	port.postMessage({response: 'loop'});
+    if (msg.type == 'timeCode') {
+      if(msg.time >= endTime()){
+        port.postMessage({command: 'loop_player', start_time: startTime()});
+      }
+    } else if (msg.type == 'newTimeCode') {
+      saveTimecode(msg.time);
     }
   });
+
+  function displayTimeCodes(){
+    document.getElementById("start_time").value = startTime();
+    document.getElementById("end_time").value = endTime();
+  }
+
+  function startTime() {
+    return timeCodes[0];
+  }
+
+  function endTime() {
+    return timeCodes[1];
+  }
+
+  function saveTimecode(timeCode) {
+    console.log(currentTimecodeIndex);
+    console.log(timeCodes);
+    timeCodes[currentTimecodeIndex] = timeCode;
+    timeCodes.sort(function (a, b) {
+      return a - b;
+    })
+    currentTimecodeIndex = 1 - currentTimecodeIndex;
+    displayTimeCodes();
+  }
+
 });
-=======
->>>>>>> 9852e2e8f0d1d24a901ea6b254b7bba960463707
