@@ -1,10 +1,16 @@
-div#show_time_div input{
-  /*display: none;*/
+#timecodes {
+  margin-top: 10px;
 }
 
-div#show_time_div.clicked input{
-	display: inline;
-  background: red;
-  -webkit-transition:  2s; /* For Safari 3.1 to 6.0 */
-  transition: width 2s;
+#timecodes input {
+  width: 135px;
+}
+
+#controls {
+  text-align: center;
+  margin-top: 10px;
+}
+
+#controls button {
+
 }
